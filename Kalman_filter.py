@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Sep 10 00:40:28 2025
 
-@author: hello
-"""
 %matplotlib qt
 import numpy as np
 import pandas as pd
