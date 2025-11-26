@@ -42,14 +42,14 @@ Python기반, Kalman Filter를 활용한 IMU와 GPS 데이터 퓨전 및 보정 
 이전 상태와 IMU의 가속도 입력을 이용해 현재 상태를 예측하는 단계입니다. 구체적인 수식과 행렬 정의는 다음과 같습니다.
 
 <div align="center">
-  <img src="image_0.png" title="State Prediction Formula and Matrices" width="800" />
+  <img src="image01.png" title="State Prediction Formula and Matrices" width="800" />
 </div>
 
 ### 3. Covariance Prediction (오차 공분산 예측)
 센서의 불확실성을 예측하는 단계입니다. 시스템 노이즈를 반영하여 예측값의 신뢰도를 계산합니다. 구체적인 수식과 행렬 정의는 다음과 같습니다.
 
 <div align="center">
-  <img src="image_1.png" title="Covariance Prediction Formula and Matrices" width="800" />
+  <img src="image02.png" title="Covariance Prediction Formula and Matrices" width="800" />
 </div>
 
 <br>
