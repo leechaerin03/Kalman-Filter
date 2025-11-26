@@ -1,12 +1,12 @@
 # 📡 Kalman Filter Sensor Fusion Simulation
-> **GPS와 IMU 센서 데이터를 융합하여 위치 추정 정확도를 극대화하는 실시간 튜닝 시뮬레이터**
+> **로봇 데이터 융합/보정 알고리즘 개발(Kalman)**
 
 <br>
 
 ## 📅 Project Overview
 **"불확실한 센서 데이터 속에서, 최적의 위치를 찾아내다."**
-자율주행 및 로보틱스 분야의 핵심인 **Sensor Fusion** 기술을 이해하고 구현하기 위한 프로젝트입니다.
-노이즈가 포함된 **GPS(위치)** 데이터와 **IMU(가속도)** 데이터를 **Kalman Filter** 알고리즘으로 결합하여, 단일 센서보다 훨씬 정밀하고 부드러운 경로를 추적하는 시뮬레이터를 개발했습니다.
+자율주행 및 로보틱스 분야의 핵심인 **Sensor Fusion** 기술을 이해하고 구현하기 위해
+Python기반, Kalman Filter를 활용한 IMU와 GPS 데이터 퓨전 및 보정 알고리즘 개발 프로젝트입니다.
 특히 **Matplotlib의 Slider 기능**을 활용해 공분산(Covariance) 파라미터를 실시간으로 튜닝하며 성능 변화를 시각적으로 분석할 수 있는 환경을 구축했습니다.
 
 <br>
@@ -28,29 +28,28 @@
 </div>
 
 <br>
-
 ## 📐 Mathematical Model (Core Logic)
 이 프로젝트는 **선형 동적 시스템(Linear Dynamic System)**을 전제로 한 칼만 필터를 적용했습니다.
 
 ### 1. State Vector (상태 벡터)
 위치($p$)와 속도($v$)를 추정하기 위해 2차원 상태 벡터를 정의했습니다.
-$$
-x = \begin{bmatrix} p \\ v \end{bmatrix}
-$$
 
-### 2. State Prediction (상태 예측)
 <div align="center">
-  <img src="https://latex.codecogs.com/svg.latex?\hat{x}_k%20=%20A%20\hat{x}_{k-1}%20+%20B%20u_k" title="State Prediction" />
+  <img src="https://latex.codecogs.com/svg.latex?x%20=%20\begin{bmatrix}%20p%20\\%20v%20\end{bmatrix}" title="State Vector" />
 </div>
 
-* **$A$ (상태 전이 행렬):** 등속 운동 모델을 기반으로 시간이 지남($\Delta t$)에 따라 위치와 속도가 어떻게 변하는지 설명합니다.
-* **$B$ (제어 입력 모델):** IMU에서 측정된 가속도가 위치와 속도에 미치는 물리적 영향을 모델링합니다.
-
-### 3. Covariance Prediction (오차 공분산 예측)
-센서의 불확실성을 예측하는 단계입니다. 시스템 노이즈($Q$)를 반영하여 예측값의 신뢰도를 계산합니다.
+### 2. State Prediction (상태 예측)
+이전 상태와 IMU의 가속도 입력을 이용해 현재 상태를 예측하는 단계입니다. 구체적인 수식과 행렬 정의는 다음과 같습니다.
 
 <div align="center">
-  <img src="https://latex.codecogs.com/svg.latex?P_k%20=%20A%20P_{k-1}%20A^T%20+%20Q" title="Covariance Prediction" />
+  <img src="image_0.png" title="State Prediction Formula and Matrices" width="800" />
+</div>
+
+### 3. Covariance Prediction (오차 공분산 예측)
+센서의 불확실성을 예측하는 단계입니다. 시스템 노이즈를 반영하여 예측값의 신뢰도를 계산합니다. 구체적인 수식과 행렬 정의는 다음과 같습니다.
+
+<div align="center">
+  <img src="image_1.png" title="Covariance Prediction Formula and Matrices" width="800" />
 </div>
 
 <br>
