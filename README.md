@@ -29,7 +29,7 @@ Python기반, Kalman Filter를 활용한 IMU와 GPS 데이터 퓨전 및 보정 
 
 <br>
 ## 📐 Mathematical Model (Core Logic)
-이 프로젝트는 **선형 동적 시스템(Linear Dynamic System)**을 전제로 한 칼만 필터를 적용했습니다.
+이 프로젝트는 선형 동적 시스템(Linear Dynamic System)을 전제로 한 칼만 필터를 적용했습니다.
 
 ### 1. State Vector (상태 벡터)
 위치($p$)와 속도($v$)를 추정하기 위해 2차원 상태 벡터를 정의했습니다.
@@ -61,7 +61,7 @@ Python기반, Kalman Filter를 활용한 IMU와 GPS 데이터 퓨전 및 보정 
 * **Sensor Fusion Logic:**
     * **GPS:** 위치 정보를 제공하지만 노이즈가 심함 (Update 단계에서 보정)
     * **IMU:** 가속도를 적분하여 부드러운 움직임을 제공하지만 오차가 누적됨 (Prediction 단계에서 사용)
-    * **Fusion:** 두 센서의 장점을 결합하여 **정확도(GPS)**와 **연속성(IMU)**을 동시에 확보
+    * **Fusion:** 두 센서의 장점을 결합하여 정확도(GPS)와 연속성(IMU)을 동시에 확보
 
 <br>
 
@@ -77,7 +77,7 @@ Python기반, Kalman Filter를 활용한 IMU와 GPS 데이터 퓨전 및 보정 
 학부 시절 **선형대수학**에서 배웠던 행렬 연산과 **다변량 통계**의 개념들이 실제 엔지니어링 문제(위치 추적)를 해결하는 데 어떻게 쓰이는지 몸소 체감할 수 있었습니다. 수식으로만 존재하던 $A x + B u$가 코드로 구현되어 실시간으로 움직이는 것을 보며 수학적 모델링의 강력함을 느꼈습니다.
 
 ### 🔭 Future Scope
-1.  **Non-linear System:** 현재의 선형 모델을 넘어, 비선형 움직임을 추적할 수 있는 **EKF(Extended Kalman Filter)**나 **Particle Filter**를 구현하여 곡선 구간에서의 성능을 비교해보고 싶습니다.
+1.  **Non-linear System:** 현재의 선형 모델을 넘어, 비선형 움직임을 추적할 수 있는 EKF(Extended Kalman Filter)나 Particle Filter를 구현하여 곡선 구간에서의 성능을 비교해보고 싶습니다.
 2.  **AI-based Estimation:** IMU 센서 데이터는 시계열(Time-series) 특성을 가집니다. 이를 **RNN(LSTM/GRU)** 모델에 학습시켜, 센서 오차를 딥러닝으로 보정하는 AI 퓨전 모델로 발전시켜 볼 계획입니다.
 
 ---
