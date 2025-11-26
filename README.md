@@ -39,18 +39,19 @@ x = \begin{bmatrix} p \\ v \end{bmatrix}
 $$
 
 ### 2. State Prediction (상태 예측)
-이전 상태($x_{k-1}$)와 **IMU의 가속도 입력($u_k$)**을 이용해 현재 상태를 예측합니다.
-$$
-\hat{x}_k = A \hat{x}_{k-1} + B u_k
-$$
+<div align="center">
+  <img src="https://latex.codecogs.com/svg.latex?\hat{x}_k%20=%20A%20\hat{x}_{k-1}%20+%20B%20u_k" title="State Prediction" />
+</div>
+
 * **$A$ (상태 전이 행렬):** 등속 운동 모델을 기반으로 시간이 지남($\Delta t$)에 따라 위치와 속도가 어떻게 변하는지 설명합니다.
 * **$B$ (제어 입력 모델):** IMU에서 측정된 가속도가 위치와 속도에 미치는 물리적 영향을 모델링합니다.
 
 ### 3. Covariance Prediction (오차 공분산 예측)
 센서의 불확실성을 예측하는 단계입니다. 시스템 노이즈($Q$)를 반영하여 예측값의 신뢰도를 계산합니다.
-$$
-P_k = A P_{k-1} A^T + Q
-$$
+
+<div align="center">
+  <img src="https://latex.codecogs.com/svg.latex?P_k%20=%20A%20P_{k-1}%20A^T%20+%20Q" title="Covariance Prediction" />
+</div>
 
 <br>
 
