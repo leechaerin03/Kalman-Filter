@@ -66,8 +66,7 @@ Python기반, Kalman Filter를 활용한 IMU와 GPS 데이터 퓨전 및 보정 
 <br>
 
 ## 📸 Simulation Result
-<img src="./assets/kalman_result.png" width="800" alt="Kalman Filter Result Graph">
-
+[![Kalman Filter Simulation](https://img.youtube.com/vi/XbY7f02Xpt8/hqdefault.jpg)](https://youtu.be/XbY7f02Xpt8)
 > **Result:** 붉은 점(GPS 노이즈)이 튀는 상황에서도, 파란 선(Kalman Filter)은 물리 법칙에 기반하여 부드럽고 정확한 경로를 유지함을 확인했습니다.
 
 <br>
