@@ -28,7 +28,6 @@ Python기반, Kalman Filter를 활용한 IMU와 GPS 데이터 퓨전 및 보정 
 </div>
 
 <br>
-## 📐 Mathematical Model (Core Logic)
 이 프로젝트는 선형 동적 시스템(Linear Dynamic System)을 전제로 한 칼만 필터를 적용했습니다.
 
 ### 1. State Vector (상태 벡터)
